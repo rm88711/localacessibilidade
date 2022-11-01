@@ -1,5 +1,5 @@
 -- Gerado por Oracle SQL Developer Data Modeler 22.2.0.165.1149
---   em:        2022-11-01 08:26:41 BRT
+--   em:        2022-11-01 09:04:29 BRT
 --   site:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -8,6 +8,7 @@
 -- predefined type, no DDL - MDSYS.SDO_GEOMETRY
 
 -- predefined type, no DDL - XMLTYPE
+--
 --
 drop table t_acessibilidade_local;
 drop table t_acessibilidade;
@@ -23,6 +24,7 @@ DROP SEQUENCE SQ_BAIRRO;
 DROP SEQUENCE SQ_LOGRADOURO;
 DROP SEQUENCE SQ_ACESSIBILIDADE;
 DROP SEQUENCE SQ_LOCAL;
+--
 --
 CREATE TABLE t_acessibilidade (
     id_acessibilidade NUMBER(9) NOT NULL,
@@ -40,17 +42,17 @@ ALTER TABLE t_acessibilidade_local ADD CONSTRAINT acessibilidade_local_pk PRIMAR
                                                                                         id_acessibilidade );
 
 CREATE TABLE t_bairro (
-    id_bairro          NUMBER(9) NOT NULL,
-    t_cidade_id_cidade NUMBER(9) NOT NULL,
-    nm_bairro          VARCHAR2(90) NOT NULL
+    id_bairro NUMBER(9) NOT NULL,
+    id_cidade NUMBER(9) NOT NULL,
+    nm_bairro VARCHAR2(90) NOT NULL
 );
 
 ALTER TABLE t_bairro ADD CONSTRAINT t_bairro_pk PRIMARY KEY ( id_bairro );
 
 CREATE TABLE t_cidade (
-    id_cidade          NUMBER(9) NOT NULL,
-    t_estado_id_estado NUMBER(9) NOT NULL,
-    nm_cidade          VARCHAR2(80) NOT NULL
+    id_cidade NUMBER(9) NOT NULL,
+    id_estado NUMBER(9) NOT NULL,
+    nm_cidade VARCHAR2(80) NOT NULL
 );
 
 ALTER TABLE t_cidade ADD CONSTRAINT t_cidade_pk PRIMARY KEY ( id_cidade );
@@ -58,24 +60,24 @@ ALTER TABLE t_cidade ADD CONSTRAINT t_cidade_pk PRIMARY KEY ( id_cidade );
 CREATE TABLE t_estado (
     id_estado       NUMBER(9) NOT NULL,
     nm_estado       VARCHAR2(30) NOT NULL,
-    nm_sigla_estado VARCHAR2(2)  NOT NULL
+    nm_sigla_estado VARCHAR2(2) NOT NULL
 );
 
 ALTER TABLE t_estado ADD CONSTRAINT t_estado_pk PRIMARY KEY ( id_estado );
 
 CREATE TABLE t_local (
-    id_local                   NUMBER(9) NOT NULL,
-    t_logradouro_id_logradouro NUMBER(9) NOT NULL,
-    nm_local                   VARCHAR2(90)
+    id_local      NUMBER(9) NOT NULL,
+    id_logradouro NUMBER(9) NOT NULL,
+    nm_local      VARCHAR2(90)
 );
 
 ALTER TABLE t_local ADD CONSTRAINT t_locais_acessibilidade_pk PRIMARY KEY ( id_local );
 
 CREATE TABLE t_logradouro (
-    id_logradouro      NUMBER(9) NOT NULL,
-    t_bairro_id_bairro NUMBER(9) NOT NULL,
-    ds_logradouro      VARCHAR2(90) NOT NULL,
-    nr_cep             VARCHAR2(20)
+    id_logradouro NUMBER(9) NOT NULL,
+    id_bairro     NUMBER(9) NOT NULL,
+    ds_logradouro VARCHAR2(90) NOT NULL,
+    nr_cep        VARCHAR2(20)
 );
 
 ALTER TABLE t_logradouro ADD CONSTRAINT t_logradouro_pk PRIMARY KEY ( id_logradouro );
@@ -91,21 +93,22 @@ ALTER TABLE t_acessibilidade_local
         REFERENCES t_local ( id_local );
 
 ALTER TABLE t_bairro
-    ADD CONSTRAINT t_bairro_t_cidade_fk FOREIGN KEY ( t_cidade_id_cidade )
+    ADD CONSTRAINT t_bairro_t_cidade_fk FOREIGN KEY ( id_cidade )
         REFERENCES t_cidade ( id_cidade );
 
 ALTER TABLE t_cidade
-    ADD CONSTRAINT t_cidade_t_estado_fk FOREIGN KEY ( t_estado_id_estado )
+    ADD CONSTRAINT t_cidade_t_estado_fk FOREIGN KEY ( id_estado )
         REFERENCES t_estado ( id_estado );
 
 --  ERROR: FK name length exceeds maximum allowed length(30) 
 ALTER TABLE t_local
-    ADD CONSTRAINT t_locais_acessibilidade_t_logradouro_fk FOREIGN KEY ( t_logradouro_id_logradouro )
+    ADD CONSTRAINT t_locais_acessibilidade_t_logradouro_fk FOREIGN KEY ( id_logradouro )
         REFERENCES t_logradouro ( id_logradouro );
 
 ALTER TABLE t_logradouro
-    ADD CONSTRAINT t_logradouro_t_bairro_fk FOREIGN KEY ( t_bairro_id_bairro )
+    ADD CONSTRAINT t_logradouro_t_bairro_fk FOREIGN KEY ( id_bairro )
         REFERENCES t_bairro ( id_bairro );
+
 --
 -- Criacao das sequences 
 --
@@ -152,7 +155,6 @@ NOCACHE
 NOCYCLE;
 --
 
-
 -- Relat�rio do Resumo do Oracle SQL Developer Data Modeler: 
 -- 
 -- CREATE TABLE                             7
@@ -193,5 +195,5 @@ NOCYCLE;
 -- ORDS ENABLE SCHEMA                       0
 -- ORDS ENABLE OBJECT                       0
 -- 
--- ERRORS                                   4
+-- ERRORS                                   3
 -- WARNINGS                                 0

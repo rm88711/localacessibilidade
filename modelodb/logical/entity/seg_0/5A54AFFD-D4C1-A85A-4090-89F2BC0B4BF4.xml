@@ -30,7 +30,7 @@
 <dataTypePrecision>9</dataTypePrecision>
 <ownDataTypeParameters>,9,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="T BAIRRO ID BAIRRO" id="54328856-436D-15F7-C226-42BB6146C216">
+<Attribute name="ID BAIRRO" id="54328856-436D-15F7-C226-42BB6146C216">
 <createdBy>kleber.monteiro</createdBy>
 <createdTime>2022-11-01 11:08:58 UTC</createdTime>
 <generatorID>5BAD7CB1-8B1D-2B62-FBCB-FF9B1F6F9E32</generatorID>

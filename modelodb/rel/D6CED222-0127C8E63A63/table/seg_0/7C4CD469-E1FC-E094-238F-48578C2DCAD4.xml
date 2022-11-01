@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,9,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="T_BAIRRO_ID_BAIRRO" id="04346BB0-DD96-A766-C078-F0DD4AEF4AC4">
+<Column name="ID_BAIRRO" id="04346BB0-DD96-A766-C078-F0DD4AEF4AC4">
 <createdBy>kleber.monteiro</createdBy>
 <createdTime>2022-11-01 10:55:39 UTC</createdTime>
 <ownerDesignName>modelodb</ownerDesignName>

@@ -30,7 +30,7 @@
 <dataTypePrecision>9</dataTypePrecision>
 <ownDataTypeParameters>,9,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="T LOGRADOURO ID LOGRADOURO" id="FE04DAC0-22A8-9D6D-F96F-ABE38E5F1BCA">
+<Attribute name="ID LOGRADOURO" id="FE04DAC0-22A8-9D6D-F96F-ABE38E5F1BCA">
 <createdBy>kleber.monteiro</createdBy>
 <createdTime>2022-11-01 11:08:58 UTC</createdTime>
 <generatorID>E996BF42-04D5-093F-1349-3346FE1AC1C6</generatorID>

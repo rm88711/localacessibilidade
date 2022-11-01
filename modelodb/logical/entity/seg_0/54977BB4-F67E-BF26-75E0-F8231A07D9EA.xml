@@ -30,7 +30,7 @@
 <dataTypePrecision>9</dataTypePrecision>
 <ownDataTypeParameters>,9,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="T CIDADE ID CIDADE" id="898F0F70-0668-9AB2-7748-BF7ECC46C957">
+<Attribute name="ID CIDADE" id="898F0F70-0668-9AB2-7748-BF7ECC46C957">
 <createdBy>kleber.monteiro</createdBy>
 <createdTime>2022-11-01 11:08:58 UTC</createdTime>
 <generatorID>CE3FACBF-C8CD-AA9E-2214-329006EDCB20</generatorID>

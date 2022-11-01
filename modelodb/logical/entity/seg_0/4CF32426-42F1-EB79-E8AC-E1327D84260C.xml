@@ -30,7 +30,7 @@
 <dataTypePrecision>9</dataTypePrecision>
 <ownDataTypeParameters>,9,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="T ESTADO ID ESTADO" id="D86B02CE-C89A-8497-4D32-4661CF22ECA3">
+<Attribute name="ID ESTADO" id="D86B02CE-C89A-8497-4D32-4661CF22ECA3">
 <createdBy>kleber.monteiro</createdBy>
 <createdTime>2022-11-01 11:08:58 UTC</createdTime>
 <generatorID>C25A1AC7-3422-2FC6-6ED4-6D01221DAA8A</generatorID>

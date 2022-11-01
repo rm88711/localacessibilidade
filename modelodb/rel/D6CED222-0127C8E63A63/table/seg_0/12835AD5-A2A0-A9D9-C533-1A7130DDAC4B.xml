@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,9,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="T_LOGRADOURO_ID_LOGRADOURO" id="C9DAE539-68F8-C065-6B73-AD103E1DF736">
+<Column name="ID_LOGRADOURO" id="C9DAE539-68F8-C065-6B73-AD103E1DF736">
 <createdBy>kleber.monteiro</createdBy>
 <createdTime>2022-11-01 10:59:17 UTC</createdTime>
 <ownerDesignName>modelodb</ownerDesignName>
