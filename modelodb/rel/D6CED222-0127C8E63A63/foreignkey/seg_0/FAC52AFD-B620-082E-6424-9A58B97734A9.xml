@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FAC52AFD-B620-082E-6424-9A58B97734A9" containerWithKeyObject="3E5399D1-81BB-7E1B-C408-8EF0B23559AA" localFKIndex="BAFDCE37-A584-4420-70BD-EEAA4A1A0EAF" name="ACESSIBILIDADE_LOCAL_T_LOCAIS_ACESSIBILIDADE_FK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:11:17 UTC</createdTime>
+<generatorID>B8BE4499-84AF-96A7-A888-32C47DE0A038</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<referredTableLongName>T_LOCAL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>12835AD5-A2A0-A9D9-C533-1A7130DDAC4B</referredTableID>
+<keyObject>2A6E3D2B-FA59-A3D9-8206-B2E5AA833148</keyObject>
+<referredKeyID>2A6E3D2B-FA59-A3D9-8206-B2E5AA833148</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_LOCAL</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

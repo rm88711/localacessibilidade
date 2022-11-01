@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4CF32426-42F1-EB79-E8AC-E1327D84260C" name="T CIDADE">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>7FCED2FF-18F9-9377-FB0D-EA6CFA611432</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID CIDADE" id="EAB8BD1D-66DC-AEA3-4011-453BB5993FDC">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>4E776005-00B0-E8EF-AD22-5B8011E79EE4</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="T ESTADO ID ESTADO" id="D86B02CE-C89A-8497-4D32-4661CF22ECA3">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>C25A1AC7-3422-2FC6-6ED4-6D01221DAA8A</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<referedAttribute>550C6D13-D89F-D3DC-7504-91330781D7CD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NM CIDADE" id="3721CA28-2A8F-4DF0-1CB0-587E61C8C2B0">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>D690513E-78C2-5A4B-A19D-6D8AD39ABFAA</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="05BEC388-0E74-5F56-4FD1-5454B9EE6D5E" name="T CIDADE PK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>5E2B9042-2F01-40FE-A6C2-2E20D3C6BF2D</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EAB8BD1D-66DC-AEA3-4011-453BB5993FDC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5A54AFFD-D4C1-A85A-4090-89F2BC0B4BF4" name="T LOGRADOURO">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>7C4CD469-E1FC-E094-238F-48578C2DCAD4</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID LOGRADOURO" id="DC24066A-DD9F-DA68-5C3E-1F7D1B38A8BF">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>75A61743-8614-829E-43A6-92AC1E58385B</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="T BAIRRO ID BAIRRO" id="54328856-436D-15F7-C226-42BB6146C216">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>5BAD7CB1-8B1D-2B62-FBCB-FF9B1F6F9E32</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<referedAttribute>480BEF2C-21A3-A6DF-F673-E13287532BB3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DS LOGRADOURO" id="50C17C36-77DE-590A-C02E-465CA49653A5">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>7C27D71B-2D8E-926E-22FF-90B0C5E4A7BA</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+<ownDataTypeParameters>90,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NR CEP" id="B546E158-7C4F-0656-7FE4-3F09FAE646D7">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>46C7CD77-3F09-32FE-5F4A-28131949C765</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0D94103C-A4B0-3A95-EE5B-22AABAE9978F" name="T LOGRADOURO PK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>E177D77F-798E-D1EF-6DD8-852BCF45B17E</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DC24066A-DD9F-DA68-5C3E-1F7D1B38A8BF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="12835AD5-A2A0-A9D9-C533-1A7130DDAC4B" name="T_LOCAL">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:56:37 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_LOCAL" id="237C5E38-D88B-4CAF-C064-BBE54D785188">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:56:58 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_LOGRADOURO_ID_LOGRADOURO" id="C9DAE539-68F8-C065-6B73-AD103E1DF736">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:59:17 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EB7F392A-1234-EACB-1F34-505D334A6CCE" referredColumn="75A61743-8614-829E-43A6-92AC1E58385B"/>
+</associations>
+</Column>
+<Column name="NM_LOCAL" id="78D450D5-3011-AD71-EE11-B571AB0CE975">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:57:29 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+<ownDataTypeParameters>90,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2A6E3D2B-FA59-A3D9-8206-B2E5AA833148" name="T_LOCAIS_ACESSIBILIDADE_PK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:57:06 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="237C5E38-D88B-4CAF-C064-BBE54D785188"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="870BE02B-0681-8C7D-5CEA-AEE61541E57F" name="T_LOCAIS_ACESSIBILIDADE_T_LOGRADOURO_FK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:59:17 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C9DAE539-68F8-C065-6B73-AD103E1DF736"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

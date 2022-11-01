@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A5B9F7DA-611C-3C7E-167D-D15289C135C7" name="T LOCAL">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>12835AD5-A2A0-A9D9-C533-1A7130DDAC4B</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID LOCAL" id="8077780D-B49F-EC7F-D513-746ECA1A8B69">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>237C5E38-D88B-4CAF-C064-BBE54D785188</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="T LOGRADOURO ID LOGRADOURO" id="FE04DAC0-22A8-9D6D-F96F-ABE38E5F1BCA">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>E996BF42-04D5-093F-1349-3346FE1AC1C6</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<referedAttribute>DC24066A-DD9F-DA68-5C3E-1F7D1B38A8BF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NM LOCAL" id="A621C0B0-CAB9-FF26-964E-6D3C29F9028A">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>78D450D5-3011-AD71-EE11-B571AB0CE975</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+<ownDataTypeParameters>90,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7424A72A-D582-32A9-69EA-63BF736E3E6E" name="T LOCAIS ACESSIBILIDADE PK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>2A6E3D2B-FA59-A3D9-8206-B2E5AA833148</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8077780D-B49F-EC7F-D513-746ECA1A8B69</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

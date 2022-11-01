@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelodb" id="AB059434-6929-C17F-D3A8-9F95C3F6C85B" version="3.5">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:44:29 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>AB059434-6929-C17F-D3A8-9F95C3F6C85B</designId>
+</OSDM_Design>

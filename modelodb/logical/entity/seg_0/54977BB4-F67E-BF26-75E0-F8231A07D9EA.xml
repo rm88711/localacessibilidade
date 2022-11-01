@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="54977BB4-F67E-BF26-75E0-F8231A07D9EA" name="T BAIRRO">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>F2E63A80-BE7A-9984-393F-0DA8CE278BA6</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID BAIRRO" id="480BEF2C-21A3-A6DF-F673-E13287532BB3">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>C641130E-7169-356D-4E89-E60B5BD52EB4</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="T CIDADE ID CIDADE" id="898F0F70-0668-9AB2-7748-BF7ECC46C957">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>CE3FACBF-C8CD-AA9E-2214-329006EDCB20</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<referedAttribute>EAB8BD1D-66DC-AEA3-4011-453BB5993FDC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NM BAIRRO" id="CDF47274-64DC-34F2-26E9-0CC722F16021">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>77F44026-EAD4-2EE0-667F-7F390B55B0E6</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+<ownDataTypeParameters>90,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="52D5351A-4999-EEB4-A112-C618BCBBE832" name="T BAIRRO PK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>46C61465-2B1B-466F-A2AB-93F6109C87F2</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>480BEF2C-21A3-A6DF-F673-E13287532BB3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

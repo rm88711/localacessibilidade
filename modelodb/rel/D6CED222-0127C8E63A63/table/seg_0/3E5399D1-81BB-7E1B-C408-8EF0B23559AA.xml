@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3E5399D1-81BB-7E1B-C408-8EF0B23559AA" name="T_ACESSIBILIDADE_LOCAL">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:11:17 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<ordsAlias>acessibilidade_local</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_LOCAL" id="EA0AD6F7-9282-63D3-BC60-437AD1179777">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:11:17 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FAC52AFD-B620-082E-6424-9A58B97734A9" referredColumn="237C5E38-D88B-4CAF-C064-BBE54D785188"/>
+</associations>
+</Column>
+<Column name="ID_ACESSIBILIDADE" id="F22D49DA-27EC-63F1-0497-7631D32E77E4">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:11:17 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4FF3BAA3-7A00-3351-E2F6-B5C4168C9A98" referredColumn="66B98103-F6E5-A9CD-349E-02FA891E6495"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CCA55EA1-2989-2EE1-D32E-92E1BAED5431" name="ACESSIBILIDADE_LOCAL_PK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:11:17 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EA0AD6F7-9282-63D3-BC60-437AD1179777"/>
+<colUsage columnID="F22D49DA-27EC-63F1-0497-7631D32E77E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BAFDCE37-A584-4420-70BD-EEAA4A1A0EAF" name="ACESSIBILIDADE_LOCAL_T_LOCAIS_ACESSIBILIDADE_FK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:11:17 UTC</createdTime>
+<generatorID>B8BE4499-84AF-96A7-A888-32C47DE0A038</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EA0AD6F7-9282-63D3-BC60-437AD1179777"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F72D6F16-4346-6B87-278B-2451B943EFBB" name="ACESSIBILIDADE_LOCAL_T_ACESSIBILIDADE_FK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:11:17 UTC</createdTime>
+<generatorID>B8BE4499-84AF-96A7-A888-32C47DE0A038</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F22D49DA-27EC-63F1-0497-7631D32E77E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

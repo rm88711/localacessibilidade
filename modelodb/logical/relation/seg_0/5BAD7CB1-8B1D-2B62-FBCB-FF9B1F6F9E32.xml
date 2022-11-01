@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="T LOGRADOURO T BAIRRO FK" directorySegmentName="seg_0" id="5BAD7CB1-8B1D-2B62-FBCB-FF9B1F6F9E32">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>C336F7A2-B624-0307-1BBF-A5AF97B04732</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<sourcePk>52D5351A-4999-EEB4-A112-C618BCBBE832</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>54977BB4-F67E-BF26-75E0-F8231A07D9EA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5A54AFFD-D4C1-A85A-4090-89F2BC0B4BF4</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

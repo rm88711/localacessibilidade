@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="T LOCAIS ACESSIBILIDADE T LOGRADOURO FK" directorySegmentName="seg_0" id="E996BF42-04D5-093F-1349-3346FE1AC1C6">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>EB7F392A-1234-EACB-1F34-505D334A6CCE</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<sourcePk>0D94103C-A4B0-3A95-EE5B-22AABAE9978F</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5A54AFFD-D4C1-A85A-4090-89F2BC0B4BF4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A5B9F7DA-611C-3C7E-167D-D15289C135C7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

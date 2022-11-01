@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4FF3BAA3-7A00-3351-E2F6-B5C4168C9A98" containerWithKeyObject="3E5399D1-81BB-7E1B-C408-8EF0B23559AA" localFKIndex="F72D6F16-4346-6B87-278B-2451B943EFBB" name="ACESSIBILIDADE_LOCAL_T_ACESSIBILIDADE_FK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:11:17 UTC</createdTime>
+<generatorID>B8BE4499-84AF-96A7-A888-32C47DE0A038</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<referredTableLongName>T_ACESSIBILIDADE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>15468B03-A387-23E9-255C-8D087B0A15CB</referredTableID>
+<keyObject>02E6E406-D45F-9FF5-51A1-4EFB0666D98C</keyObject>
+<referredKeyID>02E6E406-D45F-9FF5-51A1-4EFB0666D98C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_ACESSIBILIDADE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

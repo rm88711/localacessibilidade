@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F2E63A80-BE7A-9984-393F-0DA8CE278BA6" name="T_BAIRRO">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:51:14 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_BAIRRO" id="C641130E-7169-356D-4E89-E60B5BD52EB4">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:51:33 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_CIDADE_ID_CIDADE" id="0AD4BBF6-F354-F2EB-01F5-EADA894E9B5B">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:52:32 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62E871A9-8750-6160-0299-4AFF5D45D1C2" referredColumn="4E776005-00B0-E8EF-AD22-5B8011E79EE4"/>
+</associations>
+</Column>
+<Column name="NM_BAIRRO" id="77F44026-EAD4-2EE0-667F-7F390B55B0E6">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:51:57 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>90</dataTypeSize>
+<ownDataTypeParameters>90,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="46C61465-2B1B-466F-A2AB-93F6109C87F2" name="T_BAIRRO_PK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:51:33 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C641130E-7169-356D-4E89-E60B5BD52EB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5387B280-2747-5069-784E-635AF0E1F10E" name="T_BAIRRO_T_CIDADE_FK">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 10:52:32 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0AD4BBF6-F354-F2EB-01F5-EADA894E9B5B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

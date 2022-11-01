@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="T_ACESSIBILIDADE_LOCAL" directorySegmentName="seg_0" id="B8BE4499-84AF-96A7-A888-32C47DE0A038">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:09:55 UTC</createdTime>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<sourcePk>7424A72A-D582-32A9-69EA-63BF736E3E6E</sourcePk>
+<targetPk>4D906D0E-0406-AEBF-B2E3-3EFEFD68E9CE</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>A5B9F7DA-611C-3C7E-167D-D15289C135C7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B1BD073E-28AF-71AA-3794-FB3AD07F714E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

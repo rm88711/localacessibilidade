@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="T CIDADE T ESTADO FK" directorySegmentName="seg_0" id="C25A1AC7-3422-2FC6-6ED4-6D01221DAA8A">
+<createdBy>kleber.monteiro</createdBy>
+<createdTime>2022-11-01 11:08:58 UTC</createdTime>
+<generatorID>8B93BD27-F097-C563-C229-284A50FDC063</generatorID>
+<ownerDesignName>modelodb</ownerDesignName>
+<engineerTo>
+<item key="D6CED222-F06A-54D7-C7B7-0127C8E63A63" value="true"/>
+</engineerTo>
+<sourcePk>DB3B1E52-1A48-FB83-2C1E-C83C00C13F7C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F9A85D72-C503-02BF-A36B-A4EB6FF197F9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4CF32426-42F1-EB79-E8AC-E1327D84260C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
