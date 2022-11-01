@@ -43,7 +43,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>9</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="NM BAIRRO" id="CDF47274-64DC-34F2-26E9-0CC722F16021">
 <createdBy>kleber.monteiro</createdBy>

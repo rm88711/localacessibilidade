@@ -43,7 +43,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>9</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="NM CIDADE" id="3721CA28-2A8F-4DF0-1CB0-587E61C8C2B0">
 <createdBy>kleber.monteiro</createdBy>

@@ -43,7 +43,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>9</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="NM LOCAL" id="A621C0B0-CAB9-FF26-964E-6D3C29F9028A">
 <createdBy>kleber.monteiro</createdBy>
