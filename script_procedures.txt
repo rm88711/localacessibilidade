@@ -1,0 +1,318 @@
+create or replace procedure insere_estado(p_nm_estado    in varchar2
+                                         ,p_sigla_estado in varchar2) is
+begin
+  --
+  insert into t_estado (id_estado , nm_estado, nm_sigla_estado)
+      values (sq_estado.nextval,upper(p_nm_estado),upper(p_sigla_estado));
+  --
+exception
+  when others then
+    raise_application_error(-20000, 'insere_estado: '||sqlerrm);
+end insere_estado;
+/
+sho err
+create or replace procedure insere_cidade(p_nm_cidade    in varchar2
+                                         ,p_sigla_estado in varchar2) is
+v_id_estado number;
+begin
+  --
+  select t.id_estado
+    into v_id_estado
+    from t_estado t 
+   where t.nm_sigla_estado = upper(p_sigla_estado);
+  --
+  insert into t_cidade (id_cidade , id_estado, nm_cidade)
+      values (SQ_CIDADE.nextval,v_id_estado,upper(p_nm_cidade));
+  --
+exception
+  when no_data_found then
+    raise_application_error(-20000, 'insere_cidade: Não encontrado Estado com sigla: '||upper(p_sigla_estado));
+  when others then
+    raise_application_error(-20000, 'insere_cidade: '||sqlerrm);
+end insere_cidade;
+/
+sho err
+create or replace procedure insere_bairro(p_sigla_estado in varchar2
+                                         ,p_nm_cidade    in varchar2
+                                         ,p_nm_bairro    in varchar2) is
+v_id_estado number;
+v_id_cidade number;
+begin
+  --
+select id_cidade
+     , id_estado
+  into v_id_cidade
+     , v_id_estado
+  from t_estado 
+  join t_cidade using (id_estado)
+ where nm_sigla_estado = upper(p_sigla_estado)
+   and nm_cidade       = upper(p_nm_cidade);
+  --
+  insert into t_bairro(id_bairro       , id_cidade , nm_bairro)
+              values (SQ_CIDADE.nextval,v_id_cidade,upper(p_nm_bairro));
+  --
+exception
+  when no_data_found then
+    raise_application_error(-20000, 'insere_bairro: não encontrada combinação Cidade/Estado.');
+  when others then
+    raise_application_error(-20000, 'insere_bairro: '||sqlerrm);
+end insere_bairro;
+/
+sho err
+create or replace procedure insere_logradouro(p_sigla_estado in varchar2
+                                             ,p_nm_cidade    in varchar2
+                                             ,p_nm_bairro    in varchar2
+                                             ,p_logradouro   in varchar2
+                                             ,p_nr_cep       in varchar2) is
+v_id_bairro number;
+begin
+  --
+  select b.id_bairro
+    into v_id_bairro
+    from t_estado e
+       , t_cidade c
+       , t_bairro b
+   where b.id_cidade       = c.id_cidade
+     and c.id_estado       = e.id_estado
+     and b.nm_bairro       = upper(p_nm_bairro)
+     and c.nm_cidade       = upper(p_nm_cidade)
+     and e.nm_sigla_estado = upper(p_sigla_estado);
+  --
+  insert into t_logradouro(id_logradouro        , id_bairro , ds_logradouro     , nr_cep)
+                    values(sq_logradouro.nextval,v_id_bairro,upper(p_logradouro), p_nr_cep);
+  --
+exception
+  when no_data_found then
+    raise_application_error(-20000, 'insere_logradouro: não encontrada combinação Bairro/Cidade/Estado');
+  when others then
+    raise_application_error(-20000, 'insere_logradouro: '||sqlerrm);
+end insere_logradouro;
+/
+sho err
+create or replace procedure insere_local(p_sigla_estado in varchar2
+                                        ,p_nm_cidade    in varchar2
+                                        ,p_nm_bairro    in varchar2
+                                        ,p_logradouro   in varchar2
+                                        ,p_nm_local     in varchar2) is
+v_id_logradouro number;
+begin
+  --
+  select l.id_logradouro
+    into v_id_logradouro
+    from t_estado e
+       , t_cidade c
+       , t_bairro b
+       , t_logradouro l
+   where b.id_cidade = c.id_cidade
+     and c.id_estado = e.id_estado
+     and l.id_bairro = b.id_bairro
+     and b.nm_bairro       = upper(p_nm_bairro)
+     and c.nm_cidade       = upper(p_nm_cidade)
+     and e.nm_sigla_estado = upper(p_sigla_estado)
+     and l.ds_logradouro   = upper(p_logradouro);
+  --
+  insert into t_local(id_local        , id_logradouro , nm_local)
+               values(sq_local.nextval,v_id_logradouro, upper(p_nm_local));
+  --
+exception
+  when no_data_found then
+    raise_application_error(-20000, 'insere_local: não encontrada endereço informado');
+  when others then
+    raise_application_error(-20000, 'insere_local: '||sqlerrm);
+end insere_local;
+/
+sho err
+create or replace procedure insere_acesso(p_acesso in varchar2) is
+begin
+  --
+  insert into t_acessibilidade(id_acessibilidade, tp_acessibilidade)
+                  values(sq_acessibilidade.nextval,upper(p_acesso));
+  --
+exception
+  when others then
+    raise_application_error(-20000, 'insere_acesso: '||sqlerrm);
+end insere_acesso;
+/
+sho err
+create or replace procedure insere_local_acessibilidade(p_sigla_estado in varchar2
+                                                       ,p_nm_cidade    in varchar2
+                                                       ,p_nm_bairro    in varchar2
+                                                       ,p_logradouro   in varchar2
+                                                       ,p_nm_local     in varchar2
+                                                       ,p_acesso       in varchar2) is
+v_id_local          number;
+v_id_acessibilidade number;
+begin
+  --
+  select lo.id_local
+    into v_id_local
+    from t_estado e
+       , t_cidade c
+       , t_bairro b
+       , t_logradouro lg
+       , t_local lo
+   where b.id_cidade        = c.id_cidade
+     and c.id_estado        = e.id_estado
+     and lg.id_bairro       = b.id_bairro
+     and lg.id_logradouro   = lo.id_logradouro
+     and b.nm_bairro        = upper(p_nm_bairro)
+     and c.nm_cidade        = upper(p_nm_cidade)
+     and e.nm_sigla_estado  = upper(p_sigla_estado)
+     and lg.ds_logradouro   = upper(p_logradouro)
+     and lo.nm_local        = upper(p_nm_local);
+  --
+  select id_acessibilidade
+    into v_id_acessibilidade
+    from t_acessibilidade
+   where tp_acessibilidade = upper(p_acesso);
+  --
+  insert into T_ACESSIBILIDADE_LOCAL(ID_LOCAL, ID_ACESSIBILIDADE)
+                              values(v_id_local,v_id_acessibilidade);
+  --
+exception
+  when others then
+       raise_application_error(-20000, 'insere_local_acessibilidade: '||sqlerrm);
+end insere_local_acessibilidade;
+/
+sho err
+---
+exec insere_estado('Acre'                , 'AC');
+exec insere_estado('Alagoas'             , 'AL');
+exec insere_estado('Amapá'               , 'AP');
+exec insere_estado('Amazonas'            , 'AM');
+exec insere_estado('Bahia'               , 'BA');
+exec insere_estado('Ceará'               , 'CE');
+exec insere_estado('Distrito Federal'    , 'DF');
+exec insere_estado('Espírito Santo'      , 'ES');
+exec insere_estado('Goiás'               , 'GO');
+exec insere_estado('Maranhão'            , 'MA');
+exec insere_estado('Mato Grosso'         , 'MT');
+exec insere_estado('Mato Grosso do Sul'  , 'MS');
+exec insere_estado('Minas Gerais'        , 'MG');
+exec insere_estado('Pará'                , 'PA');
+exec insere_estado('Paraíba'             , 'PB');
+exec insere_estado('Paraná'              , 'PR');
+exec insere_estado('Pernambuco'          , 'PE');
+exec insere_estado('Piauí'               , 'PI');
+exec insere_estado('Rio de Janeiro'      , 'RJ');
+exec insere_estado('Rio Grande do Norte' , 'RN');
+exec insere_estado('Rio Grande do Sul'   , 'RS');
+exec insere_estado('Rondônia'            , 'RO');
+exec insere_estado('Roraima'             , 'RR');
+exec insere_estado('Santa Catarina'      , 'SC');
+exec insere_estado('São Paulo'           , 'SP');
+exec insere_estado('Sergipe'             , 'SE');
+exec insere_estado('Tocantins'           , 'TO' );
+--
+exec insere_cidade('BARUERI' , 'SP');
+exec insere_cidade('Amazonas' , 'AM');
+exec insere_cidade('Boa Vista' , 'RR');
+exec insere_cidade('Belem' , 'PA');
+exec insere_cidade('Macapá' , 'AP');
+exec insere_cidade('palmas' , 'TO');
+exec insere_cidade('São Luís' , 'MA');
+exec insere_cidade('Teresina' , 'PI');
+exec insere_cidade('fortaleza' , 'CE');
+exec insere_cidade('natal' , 'RN');
+exec insere_cidade('João Pessoa' , 'PB');
+exec insere_cidade('Recife' , 'PE');
+exec insere_cidade('Maceió' , 'AL');
+exec insere_cidade('Aracaju' , 'SE');
+exec insere_cidade('Salvador' , 'BA');
+exec insere_cidade('Cuiabá' , 'MT');
+exec insere_cidade('Campo Grande' , 'MS');
+exec insere_cidade('Goiânia' , 'GO');
+exec insere_cidade('Brasília' , 'DF');
+exec insere_cidade('Belo Horizonte' , 'MG');
+exec insere_cidade('Vitória' , 'ES');
+exec insere_cidade('São Paulo' , 'SP');
+exec insere_cidade('Rio de Janeiro' , 'RJ');
+exec insere_cidade('Curitiba' , 'PR');
+exec insere_cidade('Florianópolis' , 'SC');
+exec insere_cidade('Porto Alegre' , 'RS');
+--
+exec insere_bairro('SP','barueri','TAmboré');
+exec insere_bairro('SP','São Paulo','morumbi');
+exec insere_bairro('rj','Rio de Janeiro','anil');
+exec insere_bairro('rj','Rio de Janeiro','botafogo');
+exec insere_bairro('pa','belem','Canudos');
+exec insere_bairro('pa','belem','Guamá');
+exec insere_bairro('to','palmas','Setor Lago Sul');
+exec insere_bairro('to','palmas','Jardim Aureny IV');
+exec insere_bairro('BA','Salvador','Capelinha');
+exec insere_bairro('BA','Salvador','Chapada do Rio Vermelho');
+exec insere_bairro('SC','Florianópolis','Centro Histórico');
+exec insere_bairro('SC','Florianópolis','Ponta de Baixo');
+exec insere_bairro('ES','Vitória','Santo Antônio');
+exec insere_bairro('SP','São Paulo','Vila da Saúde');
+--
+exec insere_logradouro('SP','barueri','TAmboré','Avenida Esbertalina Barbosa Damiani','29946490' );
+exec insere_logradouro('SP','São Paulo','morumbi','Avenida Desembargador Moreira','60170001');
+exec insere_logradouro('rj','Rio de Janeiro','anil','Avenida Rio Branco','20040002');
+exec insere_logradouro('rj','Rio de Janeiro','botafogo','Rua Arlindo Nogueira','64000290');
+exec insere_logradouro('pa','belem','Canudos','Avenida Desembargador Moreira','60170001');
+exec insere_logradouro('pa','belem','Guamá','Avenida Rio Branco','20040002');
+exec insere_logradouro('to','palmas','Setor Lago Sul','Travessa da CDL','76900032');
+exec insere_logradouro('to','palmas','Jardim Aureny IV','Avenida Almirante Maximiano Fonseca','05706777');
+exec insere_logradouro('BA','Salvador','Capelinha','Avenida São João','88113350');
+exec insere_logradouro('BA','Salvador','Chapada do Rio Vermelho','Rua Serra de Bragança','03318000');
+exec insere_logradouro('SC','Florianópolis','Centro Histórico','Rua Tenente-Coronel Cardoso','28035042');
+exec insere_logradouro('SC','Florianópolis','Ponta de Baixo','Avenida Esbertalina Barbosa Damiani','86220000');
+exec insere_logradouro('ES','Vitória','Santo Antônio','Rua Vila Pavão','29843000');
+exec insere_logradouro('SP','São Paulo','Vila da Saúde','Rua Pereira Estéfano','04144070');
+--
+exec insere_local('SP','barueri','TAmboré','Avenida Esbertalina Barbosa Damiani','shopping tambore');
+exec insere_local('SP','São Paulo','morumbi','Avenida Desembargador Moreira','teatro vila lobos');
+exec insere_local('rj','Rio de Janeiro','anil','Avenida Rio Branco','parque alves dias');
+exec insere_local('rj','Rio de Janeiro','botafogo','Rua Arlindo Nogueira','escola Pedro Pascal');
+exec insere_local('pa','belem','Canudos','Avenida Desembargador Moreira','shopping morumbi');
+exec insere_local('pa','belem','Guamá','Avenida Rio Branco','shopping George Washington');
+exec insere_local('to','palmas','Setor Lago Sul','Travessa da CDL','escola T. E. Lawrence of Arabia');
+exec insere_local('to','palmas','Jardim Aureny IV','Avenida Almirante Maximiano Fonseca','faculdade Delcie Rice');
+exec insere_local('BA','Salvador','Capelinha','Avenida São João','mercado Hugh Jackman');
+exec insere_local('BA','Salvador','Chapada do Rio Vermelho','Rua Serra de Bragança','escola Andrés Iniesta');
+exec insere_local('SC','Florianópolis','Centro Histórico','Rua Tenente-Coronel Cardoso','teatro Imran Khan');
+exec insere_local('SC','Florianópolis','Ponta de Baixo','Avenida Esbertalina Barbosa Damiani','universidade Lyndsy Fonseca');
+exec insere_local('ES','Vitória','Santo Antônio','Rua Vila Pavão','shopping Patrick Willis');
+--
+exec insere_acesso(p_acesso => 'RAMPA');
+exec insere_acesso(p_acesso => 'ELEVADOR');
+exec insere_acesso(p_acesso => 'placas em braille');
+exec insere_acesso(p_acesso => 'Emprestimo de cadeiras de rodas');
+exec insere_acesso(p_acesso => 'Emprestimo de carrinho de bebê');
+exec insere_acesso(p_acesso => 'Emprestimo de carrinho pet');
+exec insere_acesso(p_acesso => 'Piso Tátil');
+exec insere_acesso(p_acesso => 'banheiro adaptavel para cadeirantes');
+exec insere_acesso(p_acesso => 'porta automática');
+exec insere_acesso(p_acesso => 'Mapa Tátil');
+--
+exec insere_local_acessibilidade('SP','barueri','TAmboré','Avenida Esbertalina Barbosa Damiani','shopping tambore','RAMPA');
+exec insere_local_acessibilidade('SP','barueri','TAmboré','Avenida Esbertalina Barbosa Damiani','shopping tambore','ELEVADOR');
+exec insere_local_acessibilidade('SP','barueri','TAmboré','Avenida Esbertalina Barbosa Damiani','shopping tambore','Emprestimo de cadeiras de rodas');
+exec insere_local_acessibilidade('SP','barueri','TAmboré','Avenida Esbertalina Barbosa Damiani','shopping tambore','Emprestimo de carrinho de bebê');
+exec insere_local_acessibilidade('SP','São Paulo','morumbi','Avenida Desembargador Moreira','teatro vila lobos','banheiro adaptavel para cadeirantes');
+exec insere_local_acessibilidade('SP','São Paulo','morumbi','Avenida Desembargador Moreira','teatro vila lobos','porta automática');
+exec insere_local_acessibilidade('rj','Rio de Janeiro','anil','Avenida Rio Branco','parque alves dias','Piso Tátil');
+exec insere_local_acessibilidade('rj','Rio de Janeiro','anil','Avenida Rio Branco','parque alves dias','Mapa Tátil');
+exec insere_local_acessibilidade('rj','Rio de Janeiro','botafogo','Rua Arlindo Nogueira','escola Pedro Pascal','banheiro adaptavel para cadeirantes');
+exec insere_local_acessibilidade('rj','Rio de Janeiro','botafogo','Rua Arlindo Nogueira','escola Pedro Pascal','RAMPA');
+exec insere_local_acessibilidade('pa','belem','Canudos','Avenida Desembargador Moreira','shopping morumbi','ELEVADOR');
+exec insere_local_acessibilidade('pa','belem','Canudos','Avenida Desembargador Moreira','shopping morumbi','porta automática');
+exec insere_local_acessibilidade('pa','belem','Guamá','Avenida Rio Branco','shopping George Washington','RAMPA');
+exec insere_local_acessibilidade('pa','belem','Guamá','Avenida Rio Branco','shopping George Washington','placas em braille');
+exec insere_local_acessibilidade('to','palmas','Setor Lago Sul','Travessa da CDL','escola T. E. Lawrence of Arabia','Emprestimo de carrinho pet');
+exec insere_local_acessibilidade('to','palmas','Setor Lago Sul','Travessa da CDL','escola T. E. Lawrence of Arabia','Emprestimo de cadeiras de rodas');
+exec insere_local_acessibilidade('to','palmas','Setor Lago Sul','Travessa da CDL','escola T. E. Lawrence of Arabia','porta automática');
+exec insere_local_acessibilidade('to','palmas','Jardim Aureny IV','Avenida Almirante Maximiano Fonseca','faculdade Delcie Rice','banheiro adaptavel para cadeirantes');
+exec insere_local_acessibilidade('to','palmas','Jardim Aureny IV','Avenida Almirante Maximiano Fonseca','faculdade Delcie Rice','ELEVADOR');
+exec insere_local_acessibilidade('BA','Salvador','Capelinha','Avenida São João','mercado Hugh Jackman','porta automática');
+exec insere_local_acessibilidade('BA','Salvador','Capelinha','Avenida São João','mercado Hugh Jackman','Piso Tátil');
+exec insere_local_acessibilidade('BA','Salvador','Chapada do Rio Vermelho','Rua Serra de Bragança','escola Andrés Iniesta','RAMPA');
+exec insere_local_acessibilidade('BA','Salvador','Chapada do Rio Vermelho','Rua Serra de Bragança','escola Andrés Iniesta','banheiro adaptavel para cadeirantes');
+exec insere_local_acessibilidade('SC','Florianópolis','Centro Histórico','Rua Tenente-Coronel Cardoso','teatro Imran Khan','ELEVADOR');
+exec insere_local_acessibilidade('SC','Florianópolis','Centro Histórico','Rua Tenente-Coronel Cardoso','teatro Imran Khan','placas em braille');
+exec insere_local_acessibilidade('SC','Florianópolis','Ponta de Baixo','Avenida Esbertalina Barbosa Damiani','universidade Lyndsy Fonseca','banheiro adaptavel para cadeirantes');
+exec insere_local_acessibilidade('SC','Florianópolis','Ponta de Baixo','Avenida Esbertalina Barbosa Damiani','universidade Lyndsy Fonseca','RAMPA');
+exec insere_local_acessibilidade('ES','Vitória','Santo Antônio','Rua Vila Pavão','shopping Patrick Willis','ELEVADOR');
+exec insere_local_acessibilidade('ES','Vitória','Santo Antônio','Rua Vila Pavão','shopping Patrick Willis','porta automática');
+commit;
