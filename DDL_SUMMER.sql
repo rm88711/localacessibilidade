@@ -17,6 +17,7 @@ drop table t_logradouro;
 drop table t_bairro;
 drop table t_cidade;
 drop table t_estado;
+drop table t_log_acessibilidade_local;
 --
 DROP SEQUENCE SQ_ESTADO;
 DROP SEQUENCE SQ_CIDADE;
@@ -24,6 +25,7 @@ DROP SEQUENCE SQ_BAIRRO;
 DROP SEQUENCE SQ_LOGRADOURO;
 DROP SEQUENCE SQ_ACESSIBILIDADE;
 DROP SEQUENCE SQ_LOCAL;
+DROP SEQUENCE sq_log_acessibilidade_local;
 --
 --
 CREATE TABLE t_acessibilidade (
@@ -45,6 +47,18 @@ CREATE TABLE t_bairro (
     id_bairro NUMBER(9) NOT NULL,
     id_cidade NUMBER(9) NOT NULL,
     nm_bairro VARCHAR2(90) NOT NULL
+);
+--
+-- TABELA de Auditoria
+CREATE TABLE t_log_acessibilidade_local (
+    id_log                NUMBER(9) NOT NULL,
+    nm_tp_operacao        varchar2(30),
+    id_local_old          number(9),
+    id_acessibilidade_old number(9),
+    id_local_new          number(9),
+    id_acessibilidade_new number(9),
+    nm_usuario_operacao varchar2(50),
+    dt_data_operacao    date
 );
 
 ALTER TABLE t_bairro ADD CONSTRAINT t_bairro_pk PRIMARY KEY ( id_bairro );
@@ -82,12 +96,10 @@ CREATE TABLE t_logradouro (
 
 ALTER TABLE t_logradouro ADD CONSTRAINT t_logradouro_pk PRIMARY KEY ( id_logradouro );
 
---  ERROR: FK name length exceeds maximum allowed length(30) 
 ALTER TABLE t_acessibilidade_local
     ADD CONSTRAINT acessibilidade_local_t_acessibilidade_fk FOREIGN KEY ( id_acessibilidade )
         REFERENCES t_acessibilidade ( id_acessibilidade );
 
---  ERROR: FK name length exceeds maximum allowed length(30) 
 ALTER TABLE t_acessibilidade_local
     ADD CONSTRAINT acessibilidade_local_t_locais_acessibilidade_fk FOREIGN KEY ( id_local )
         REFERENCES t_local ( id_local );
@@ -100,7 +112,6 @@ ALTER TABLE t_cidade
     ADD CONSTRAINT t_cidade_t_estado_fk FOREIGN KEY ( id_estado )
         REFERENCES t_estado ( id_estado );
 
---  ERROR: FK name length exceeds maximum allowed length(30) 
 ALTER TABLE t_local
     ADD CONSTRAINT t_locais_acessibilidade_t_logradouro_fk FOREIGN KEY ( id_logradouro )
         REFERENCES t_logradouro ( id_logradouro );
@@ -148,6 +159,13 @@ NOCACHE
 NOCYCLE;
 --
 CREATE SEQUENCE SQ_LOCAL
+START WITH 1
+INCREMENT BY 1
+MAXVALUE 99999
+NOCACHE
+NOCYCLE;
+--
+CREATE SEQUENCE sq_log_acessibilidade_local
 START WITH 1
 INCREMENT BY 1
 MAXVALUE 99999

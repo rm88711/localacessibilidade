@@ -1,0 +1,16 @@
+create or replace function total_linhas return number is
+v_total number;
+begin
+  --
+  select count(1)
+    into v_total
+    from T_ACESSIBILIDADE_LOCAL;
+  --
+  return v_total;
+  --
+exception
+  when others then
+       raise_application_error(-20000, 'total_linhas: '||sqlerrm);
+end total_linhas;
+/
+sho erro
