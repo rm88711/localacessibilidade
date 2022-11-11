@@ -30,6 +30,22 @@
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="652" y="652" width="368" height="110"/>
 </OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="4CED4688-AA9F-F65D-D43C-A3CCE2344B89" otype="Note" vid="92A2621B-2C83-AC92-ADCD-BA8BB96D3989">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="982" y="243" width="170" height="74"/>
+<useDefaultColor>false</useDefaultColor>
+<backgroundColor>-13108</backgroundColor>
+<foregroundColor>-16777216</foregroundColor>
+<comment>Tabela para o Logradouro.</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="682BC23E-B5E0-5286-A04E-58DC20F68629" otype="Note" vid="63496CC8-2B81-0B59-A5B8-AD45921D5E31">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="10" y="174" width="160" height="86"/>
+<useDefaultColor>false</useDefaultColor>
+<backgroundColor>-13108</backgroundColor>
+<foregroundColor>-16777216</foregroundColor>
+<comment>Tabela para salvar os Estados  e a sigla deles</comment>
+</OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="7C4CD469-E1FC-E094-238F-48578C2DCAD4" otype="Table" vid="B740433B-03BD-A932-3BEB-26225DF88379">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="714" y="236" width="251" height="138"/>
@@ -37,6 +53,46 @@
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="7FCED2FF-18F9-9377-FB0D-EA6CFA611432" otype="Table" vid="A183F92B-A1DC-CCDE-73CB-5D5BE27E9175">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="351" y="65" width="248" height="110"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="948E344B-A9ED-77C0-AC3C-9F897D044A22" otype="Note" vid="3DF894A9-9C5A-EE11-0FAB-A586563D98E9">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="989" y="62" width="170" height="65"/>
+<useDefaultColor>false</useDefaultColor>
+<backgroundColor>-13108</backgroundColor>
+<foregroundColor>-16777216</foregroundColor>
+<comment>Tabela para salvar os Bairros.</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="BF17FD16-2E98-622F-5AC3-5DE5D8A0D468" otype="Note" vid="6F7B7DAA-C809-17B7-CFC8-DF8AF37961C6">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="1020" y="755" width="170" height="69"/>
+<useDefaultColor>false</useDefaultColor>
+<backgroundColor>-13108</backgroundColor>
+<foregroundColor>-16777216</foregroundColor>
+<comment>Tabela relaciona o local com o tipo de acessibilidade.</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="C10FE25B-3AA4-12BC-742F-14F10C9ACE53" otype="Note" vid="9E6FB332-3959-B2C7-2E97-62E9579C61E8">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="46" y="569" width="170" height="110"/>
+<useDefaultColor>false</useDefaultColor>
+<backgroundColor>-13108</backgroundColor>
+<foregroundColor>-16777216</foregroundColor>
+<comment>Tabela para salvar tipo de acessibilidade com rampa para cadeirante , Elevador , placas em brailer etc..</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="E56E529E-A622-7B64-8677-33468558B94A" otype="Note" vid="F0816312-9548-9681-3D17-21FD309911E1">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="346" y="185" width="170" height="53"/>
+<useDefaultColor>false</useDefaultColor>
+<backgroundColor>-13108</backgroundColor>
+<foregroundColor>-16777216</foregroundColor>
+<comment>Tabela para salvar as Cidades.</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="EFF552EC-4226-333D-429D-8598F0AFDBAD" otype="Note" vid="1FA33CCB-79EB-FC41-693D-6FA99B997EA8">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="1024" y="452" width="170" height="110"/>
+<useDefaultColor>false</useDefaultColor>
+<backgroundColor>-13108</backgroundColor>
+<foregroundColor>-16777216</foregroundColor>
+<comment>Tabela para salvar os Locais como por exemplo Shopping Morumbi, Tetro Vila Lobos etc..</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="F2E63A80-BE7A-9984-393F-0DA8CE278BA6" otype="Table" vid="AAC33B13-ED59-0EC1-628A-FD862CBC1E5E">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
